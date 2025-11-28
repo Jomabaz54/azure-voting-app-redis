@@ -53,11 +53,13 @@ spec:
       labels:
         app: azure-vote-front
     spec:
+      imagePullSecrets:
+      - name: acrindra25-secret
       nodeSelector:
         "kubernetes.io/os": linux
       containers:
       - name: azure-vote-front
-        image: mcr.microsoft.com/azuredocs/azure-vote-front:v1
+        image: acrindra25.azurecr.io/azure-vote-front:v1
         ports:
         - containerPort: 80
         resources:
